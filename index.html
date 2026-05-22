@@ -101,8 +101,9 @@
     align-items: center;
     gap: 0;
   }
-  .badges span:not(.sep) { color: var(--fg); }
+  .badges span:not(.sep):not(.label) { color: var(--fg); }
   .badges .ver { color: var(--green); }
+  .badges .label { color: var(--gray); margin-right: 6px; }
   .badges .sep { color: var(--border); margin: 0 12px; }
 
   /* ─── Tagline ─── */
@@ -146,7 +147,6 @@
   }
   pre {
     background: var(--code-bg);
-    border-left: 2px solid var(--green);
     padding: 14px 16px;
     margin: 12px 0;
     overflow-x: auto;
@@ -236,26 +236,6 @@
   a:hover { color: var(--green); border-color: var(--green); }
   a:active { scale: 0.96; }
 
-  /* ─── Footer ─── */
-  footer {
-    margin-top: 36px;
-    padding-top: 20px;
-    border-top: 1px dashed var(--border);
-    color: var(--gray);
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  footer .sep { color: var(--border); }
-  .blink {
-    animation: blink 1.1s step-end infinite;
-    color: var(--green);
-    margin-left: auto;
-    font-weight: bold;
-  }
-  @keyframes blink { 50% { opacity: 0; } }
-
   /* ─── Mobile ─── */
   @media (max-width: 640px) {
     body { padding: 16px 12px; }
@@ -275,7 +255,6 @@
       animation-duration: 0.01ms !important;
       transition-duration: 0.01ms !important;
     }
-    .blink { animation: none; }
   }
 </style>
 </head>
@@ -293,16 +272,15 @@
 </pre>
 
 <div class="badges">
-  <span class="ver">v0.1.0</span><span class="sep">│</span><span>MIT</span><span class="sep">│</span><span>claude-code · codex · cursor · 51+ more</span>
+  <span class="label">skill do:</span> <span>claude-code · codex · cursor · 51+ more</span><span class="sep">│</span><span class="ver">v0.1.0</span>
 </div>
 
-<p class="tagline">Polski anti-slop skill dla AI. <strong>Wycina bełkot, naprawia gramatykę, zostawia twój styl.</strong></p>
+<p class="tagline"><strong>Skill do AI, który nie zastępuje myślenia.</strong> Całkiem dobrze wycina bełkot i naprawia gramatykę. Wynik trzeba przeczytać i warto go traktować jako początek pracy nad tekstem, a nie finalną wersję.</p>
 
-<h2>problem</h2>
 <p>LLM-y piszą po polsku jak korpo-prezentacja z 2007: „w oparciu o", „stanowi kluczowy element", „dedykowane rozwiązanie adresujące potrzeby". Bełkot, który widać na kilometr.</p>
 <p><code>polskagurom</code> czyta twój tekst, wycina najgorszy bełkot i łapie błędy gramatyczne. Sam też potrafi nasypać slopu — ale wyłapuje sporo i pomaga go unikać. Myślenia nie zastąpi: wynik trzeba przeczytać z głową.</p>
 
-<h2>instalacja</h2>
+<h2>instalacja w terminalu</h2>
 <pre><code><span class="prompt"></span>npx skills add wojtekwoz/polskagurom -g</code></pre>
 
 <h2>użycie</h2>
@@ -316,15 +294,14 @@
 <div class="example">
   <div class="example-col">
     <p class="comment"># wejście</p>
-    <div class="before">W oparciu o przeprowadzoną analizę, należy podkreślić, że nasza dedykowana platforma stanowi kluczowe rozwiązanie. Decyzja została podjęta przez zespół w celu dostarczenia wartości klientom.</div>
+    <div class="before">W kursie będziemy pracować nad tym, jak korzystać z Claude Code w uporządkowany sposób: od setupu i kontekstu, przez pierwsze projekty, aż po własny workflow budowania stron, aplikacji i prototypów.</div>
   </div>
   <div class="arrow">→</div>
   <div class="example-col">
     <p class="comment"># wyjście</p>
-    <div class="after">Z analizy wynika, że nasza platforma realnie pomaga firmom. Zespół zdecydował się ją zbudować, żeby dać klientom konkretną wartość.</div>
+    <div class="after">W kursie pokażę, jak używać Claude Code z głową: od setupu i kontekstu, przez pierwsze projekty, aż po własny workflow do budowania stron, aplikacji i prototypów.</div>
   </div>
 </div>
-<p class="comment"># wycięte: w oparciu o · należy podkreślić · dedykowana · stanowi · kluczowe · strona bierna · w celu · dostarczenia wartości</p>
 
 <h2>co wyłapuje</h2>
 <ul>
@@ -344,7 +321,6 @@
   <li>Nie zgaduje — jak nie wie, pyta</li>
 </ul>
 
-<h2>razem</h2>
 <div class="invite">
   <p><strong>Zapraszam do rozwijania skilla ze mną.</strong> To pierwsza wersja i przed nami długa droga.</p>
 </div>
@@ -355,13 +331,6 @@
   <li><a href="https://skills.sh">skills.sh</a> — ekosystem skilli (50+ narzędzi)</li>
   <li><a href="https://wozu.co">wozu.co</a> — autor</li>
 </ul>
-
-<footer>
-  <a href="https://github.com/wojtekwoz">@wojtekwoz</a>
-  <span class="sep">·</span>
-  <span>MIT</span>
-  <span class="blink">█</span>
-</footer>
 
   </div>
 </div>
