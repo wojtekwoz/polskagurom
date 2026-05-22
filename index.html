@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>polskagurom — polski anti-slop skill dla AI</title>
-<meta name="description" content="Skill dla Claude Code, Codex, Cursor który poprawia polskie teksty od AI. Wycina kalki, naprawia gramatykę i interpunkcję.">
+<meta name="description" content="Skill dla Claude Code, Codex i Cursor. Wycina AI-bełkot, naprawia gramatykę i interpunkcję, zostawia twój styl.">
+<meta property="og:title" content="polskagurom — polski anti-slop skill dla AI">
+<meta property="og:description" content="Wycina bełkot, naprawia gramatykę, zostawia twój styl.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wojtekwoz.github.io/polskagurom/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='15' fill='%230a0a0a'/%3E%3Ctext x='50' y='75' text-anchor='middle' font-size='75' fill='%234ade80' font-family='monospace'%3E_%3C/text%3E%3C/svg%3E">
 <style>
   :root {
     --bg: #0a0a0a;
@@ -218,16 +224,13 @@
 
 <h2>problem</h2>
 <p>LLM-y piszą po polsku jak korpo-prezentacja z 2007: „w oparciu o", „stanowi kluczowy element", „dedykowane rozwiązanie adresujące potrzeby". Bełkot, który widać na kilometr.</p>
-
-<h2>rozwiązanie</h2>
-<p><code>polskagurom</code> to skill, który czyta twój tekst, wycina ten bełkot, sprawdza gramatykę i zwraca naturalną polszczyznę — <strong>bez zmiany twojego stylu</strong>.</p>
+<p><code>polskagurom</code> czyta twój tekst, wycina bełkot, łapie błędy gramatyczne i zwraca naturalną polszczyznę — <strong>bez zmiany twojego stylu</strong>.</p>
 
 <h2>instalacja</h2>
 <pre><code><span class="prompt"></span>npx skills add wojtekwoz/polskagurom -g</code></pre>
-<p class="comment"># <code>-g</code> = globalnie, działa we wszystkich projektach<br># bez flagi = tylko w bieżącym projekcie</p>
+<p class="comment"># <code>-g</code> = globalnie (we wszystkich projektach naraz)</p>
 
 <h2>użycie</h2>
-<p>Wklej tekst do Claude Code / Codex / Cursor i odpal:</p>
 <pre><code>/polskagurom
 
 /polskagurom — to email do klienta
@@ -251,7 +254,7 @@
   <li><strong>Pleonazmy</strong> — cofać się do tyłu, dzień dzisiejszy, okres czasu, w pełni kompletny</li>
 </ul>
 
-<h2>co NIE robi</h2>
+<h2>czego NIE robi</h2>
 <ul>
   <li>Nie formalizuje — casual zostaje casualem</li>
   <li>Nie zmienia tonu — anti-slop ≠ corporate filter</li>
@@ -259,18 +262,10 @@
   <li>Nie zgaduje — jak nie wie, pyta</li>
 </ul>
 
-<h2>struktura</h2>
-<pre><code>skills/polskagurom/
-├── SKILL.md              # workflow + frontmatter (entry point)
-├── checklist.md          # 14-punktowa quick check (zawsze ładowana)
-├── anti-slop.md          # kalki, AI-tells, korpomowa (on-demand)
-└── grammar-reference.md  # 7 przypadków, rekcja, interpunkcja (on-demand)</code></pre>
-<p class="comment"># token-efficient: skill ładuje tylko checklistę. reference czyta dopiero, gdy widzi konkretny problem.</p>
-
 <h2>linki</h2>
 <ul>
-  <li><a href="https://github.com/wojtekwoz/polskagurom">github.com/wojtekwoz/polskagurom</a></li>
-  <li><a href="https://skills.sh">skills.sh</a> — ekosystem skilli</li>
+  <li><a href="https://github.com/wojtekwoz/polskagurom">github.com/wojtekwoz/polskagurom</a> — kod, issues, dokumentacja</li>
+  <li><a href="https://skills.sh">skills.sh</a> — ekosystem skilli (50+ narzędzi)</li>
   <li><a href="https://wozu.co">wozu.co</a> — autor</li>
 </ul>
 

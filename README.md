@@ -7,7 +7,9 @@
                             |___/
 ```
 
-> Polski anti-slop skill dla Claude Code, Codex, Cursor i innych. Wycina AI-bełkot, łapie błędy gramatyczne, naprawia interpunkcję i kalki z angielskiego.
+> Polski anti-slop skill dla Claude Code, Codex, Cursor i 50+ innych. Wycina AI-bełkot, naprawia gramatykę, zostawia twój styl.
+
+LP: **[wojtekwoz.github.io/polskagurom](https://wojtekwoz.github.io/polskagurom/)**
 
 ---
 
@@ -15,20 +17,22 @@
 
 LLM-y piszą po polsku jak korpo-prezentacja z 2007: „w oparciu o", „stanowi kluczowy element", „dedykowane rozwiązanie adresujące potrzeby". Bełkot.
 
-`polskagurom` to skill, który czyta twój tekst, wycina ten bełkot, sprawdza gramatykę i zwraca naturalną polszczyznę — **bez zmiany twojego stylu**.
+`polskagurom` czyta twój tekst, wycina bełkot, łapie błędy gramatyczne i zwraca naturalną polszczyznę — **bez zmiany twojego stylu**.
 
 ## Instalacja
 
 ```bash
-# do projektu
-npx skills add wojtekwoz/polskagurom
-
-# globalnie (wszędzie)
+# globalnie (we wszystkich projektach)
 npx skills add wojtekwoz/polskagurom -g
+
+# tylko do projektu
+npx skills add wojtekwoz/polskagurom
 
 # tylko do Claude Code
 npx skills add wojtekwoz/polskagurom -g -a claude-code
 ```
+
+Działa we wszystkich narzędziach wspieranych przez [skills.sh](https://skills.sh).
 
 ## Użycie
 
@@ -46,11 +50,7 @@ Opcjonalnie z kontekstem:
 /polskagurom — to tłumaczenie z angielskiego
 ```
 
-## Co dostajesz
-
-1. **Poprawiony tekst** jako plain text (do skopiowania bez czyszczenia)
-2. **Listę zmian** w formacie `"przed" → "po"` z krótkim uzasadnieniem
-3. **Wątpliwości zaznaczone**, nie zgadywane — skill pyta zamiast nadinterpretować
+Skill zwraca poprawiony tekst + listę zmian (`"przed" → "po"` z krótkim uzasadnieniem). Wątpliwości zaznacza, nie zgaduje.
 
 ## Przykład
 
@@ -88,35 +88,15 @@ Wycięte: `w oparciu o`, `należy podkreślić`, `dedykowana`, `stanowi`, `klucz
                              okres czasu, w pełni kompletny
 ```
 
-## Struktura
-
-```
-skills/polskagurom/
-├── SKILL.md              # workflow + frontmatter (entry point)
-├── checklist.md          # 14-punktowa quick check (zawsze ładowana)
-├── anti-slop.md          # kalki, AI-tells, korpomowa (on-demand)
-└── grammar-reference.md  # 7 przypadków, rekcja, interpunkcja (on-demand)
-```
-
-Token-efficient: skill ładuje tylko checklistę (krótką). Reference czyta dopiero, gdy widzi konkretny problem.
-
-## Co skill **nie** robi
+## Czego skill **nie** robi
 
 - **Nie formalizuje.** Casual zostaje casualem. Slangu nie tnie.
 - **Nie zmienia tonu.** Anti-slop ≠ corporate filter.
 - **Nie zmienia długości na siłę.** Tnie tylko bełkot, nie treść.
 - **Nie zgaduje.** Jak nie wie — pyta.
 
-## Wsparcie agentów
-
-Działa wszędzie, gdzie działają skille przez `skills.sh`: Claude Code, Codex, Cursor, OpenCode + 50+ innych. Pełna lista: [skills.sh](https://skills.sh).
-
-## Licencja
+## Licencja & autor
 
 MIT — rób, co chcesz.
 
-## Autor
-
-[@wojtekwoz](https://github.com/wojtekwoz) · [wozu.co](https://wozu.co)
-
-Zgłoszenia, pomysły, nowe reguły → [GitHub Issues](https://github.com/wojtekwoz/polskagurom/issues).
+[@wojtekwoz](https://github.com/wojtekwoz) · [wozu.co](https://wozu.co) · [zgłoszenia i pomysły](https://github.com/wojtekwoz/polskagurom/issues)
