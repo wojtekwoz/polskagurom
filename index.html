@@ -18,6 +18,7 @@
     --border: #262626;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { color-scheme: dark; }
   html, body { background: var(--bg); color: var(--fg); }
   body {
     font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
@@ -27,7 +28,11 @@
     max-width: 920px;
     margin: 0 auto;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
+  ::selection { background: var(--green); color: var(--bg); }
   .terminal {
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -71,9 +76,10 @@
     margin: 32px 0 12px;
     border-bottom: 1px dashed var(--border);
     padding-bottom: 6px;
+    text-wrap: balance;
   }
   h2::before { content: "## "; color: var(--gray); }
-  p { margin: 12px 0; }
+  p { margin: 12px 0; text-wrap: pretty; }
   code {
     background: #1a1a1a;
     padding: 2px 6px;
@@ -117,14 +123,25 @@
   ul { padding-left: 22px; margin: 12px 0; }
   li { margin: 6px 0; }
   li::marker { color: var(--magenta); }
-  a { color: var(--blue); text-decoration: none; border-bottom: 1px dotted var(--blue); }
+  a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--blue);
+    display: inline-block;
+    padding: 2px 0;
+    transition-property: color, border-color, scale;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  }
   a:hover { color: var(--green); border-color: var(--green); }
+  a:active { scale: 0.96; }
   .tagline {
     color: var(--gray);
     font-style: italic;
     margin: 12px 0 28px;
     border-left: 2px solid var(--magenta);
     padding-left: 14px;
+    text-wrap: pretty;
   }
   .blink {
     animation: blink 1s step-end infinite;
@@ -140,6 +157,20 @@
     color: var(--gray);
     font-size: 12px;
   }
+  @media (max-width: 640px) {
+    body { padding: 12px; font-size: 13px; }
+    .content { padding: 18px 16px; }
+    .ascii { font-size: 8px; }
+    .titlebar-title { display: none; }
+    h2 { margin-top: 28px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .blink { animation: none; }
+  }
   .badges {
     margin: 8px 0 20px;
     display: flex;
@@ -153,6 +184,7 @@
     border-radius: 3px;
     font-size: 11px;
     color: var(--gray);
+    font-variant-numeric: tabular-nums;
   }
   .badge.green { border-color: var(--green); color: var(--green); }
 </style>
