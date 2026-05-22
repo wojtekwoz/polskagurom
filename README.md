@@ -13,23 +13,16 @@ LP: **[wojtekwoz.github.io/polskagurom](https://wojtekwoz.github.io/polskagurom/
 
 ---
 
-## Po co to
+## Problem
 
 LLM-y piszą po polsku jak korpo-prezentacja z 2007: „w oparciu o", „stanowi kluczowy element", „dedykowane rozwiązanie adresujące potrzeby". Bełkot.
 
-`polskagurom` czyta twój tekst, wycina bełkot, łapie błędy gramatyczne i zwraca naturalną polszczyznę — **bez zmiany twojego stylu**.
+`polskagurom` czyta twój tekst, wycina najgorszy bełkot i łapie błędy gramatyczne. Sam też potrafi nasypać slopu — ale wyłapuje sporo i pomaga go unikać. Myślenia nie zastąpi: wynik trzeba przeczytać z głową.
 
 ## Instalacja
 
 ```bash
-# globalnie (we wszystkich projektach)
 npx skills add wojtekwoz/polskagurom -g
-
-# tylko do projektu
-npx skills add wojtekwoz/polskagurom
-
-# tylko do Claude Code
-npx skills add wojtekwoz/polskagurom -g -a claude-code
 ```
 
 Działa we wszystkich narzędziach wspieranych przez [skills.sh](https://skills.sh).
@@ -72,7 +65,7 @@ wartość.
 
 Wycięte: `w oparciu o`, `należy podkreślić`, `dedykowana`, `stanowi`, `kluczowe`, strona bierna, `w celu`, `dostarczenia wartości`.
 
-## Co skill łapie
+## Co skill wyłapuje
 
 ```
 ├── kalki z angielskiego ─── w oparciu o, dedykowany, adresować,
@@ -84,9 +77,11 @@ Wycięte: `w oparciu o`, `należy podkreślić`, `dedykowana`, `stanowi`, `klucz
 ├── interpunkcja ─────────── przecinek przed że/który/żeby, myślnik vs
 │                            łącznik, polskie cudzysłowy „..."
 ├── pisownia ──────────────  nie + część mowy, tę vs tą, wielkie/małe
-└── pleonazmy ─────────────  cofać się do tyłu, dzień dzisiejszy,
+└── pleonazmy *────────────  cofać się do tyłu, dzień dzisiejszy,
                              okres czasu, w pełni kompletny
 ```
+
+*\* nie wiedziałem, że istnieje takie słowo xd*
 
 ## Czego skill **nie** robi
 
@@ -95,8 +90,14 @@ Wycięte: `w oparciu o`, `należy podkreślić`, `dedykowana`, `stanowi`, `klucz
 - **Nie zmienia długości na siłę.** Tnie tylko bełkot, nie treść.
 - **Nie zgaduje.** Jak nie wie — pyta.
 
+## Razem
+
+**Zapraszam do rozwijania skilla ze mną.** To pierwsza wersja i przed nami długa droga.
+
+[Issues](https://github.com/wojtekwoz/polskagurom/issues) · [Pull requests](https://github.com/wojtekwoz/polskagurom/pulls)
+
 ## Licencja & autor
 
 MIT — rób, co chcesz.
 
-[@wojtekwoz](https://github.com/wojtekwoz) · [wozu.co](https://wozu.co) · [zgłoszenia i pomysły](https://github.com/wojtekwoz/polskagurom/issues)
+[@wojtekwoz](https://github.com/wojtekwoz) · [wozu.co](https://wozu.co)
