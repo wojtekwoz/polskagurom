@@ -49,8 +49,8 @@ Opcjonalnie z kontekstem:
 ## Co dostajesz
 
 1. **Poprawiony tekst** jako plain text (do skopiowania bez czyszczenia)
-2. **Listę zmian** w formacie `"przed" → "po"` z krótkim why
-3. **Wątpliwości flagowane**, nie zgadywane — skill pyta zamiast nadinterpretować
+2. **Listę zmian** w formacie `"przed" → "po"` z krótkim uzasadnieniem
+3. **Wątpliwości zaznaczone**, nie zgadywane — skill pyta zamiast nadinterpretować
 
 ## Przykład
 
@@ -98,25 +98,25 @@ skills/polskagurom/
 └── grammar-reference.md  # 7 przypadków, rekcja, interpunkcja (on-demand)
 ```
 
-Token-efficient: skill ładuje tylko checklist (mała). Reference czyta gdy widzi konkretny problem.
+Token-efficient: skill ładuje tylko checklistę (krótką). Reference czyta dopiero, gdy widzi konkretny problem.
 
 ## Co skill **nie** robi
 
-- **Nie formalizuje.** Casual zostaje casualem. Slang nie wycinany.
+- **Nie formalizuje.** Casual zostaje casualem. Slangu nie tnie.
 - **Nie zmienia tonu.** Anti-slop ≠ corporate filter.
-- **Nie zmienia długości na siłę.** Tnie tylko bełkot, nie content.
+- **Nie zmienia długości na siłę.** Tnie tylko bełkot, nie treść.
 - **Nie zgaduje.** Jak nie wie — pyta.
 
 ## Wsparcie agentów
 
-Działa wszędzie gdzie działają skille przez `skills.sh`: Claude Code, Codex, Cursor, OpenCode + 50+ innych. Pełna lista: [skills.sh](https://skills.sh).
+Działa wszędzie, gdzie działają skille przez `skills.sh`: Claude Code, Codex, Cursor, OpenCode + 50+ innych. Pełna lista: [skills.sh](https://skills.sh).
 
 ## Licencja
 
-MIT — rób co chcesz.
+MIT — rób, co chcesz.
 
 ## Autor
 
 [@wojtekwoz](https://github.com/wojtekwoz) · [wozu.co](https://wozu.co)
 
-Issues, suggestions, dodatkowe reguły → [GitHub Issues](https://github.com/wojtekwoz/polskagurom/issues).
+Zgłoszenia, pomysły, nowe reguły → [GitHub Issues](https://github.com/wojtekwoz/polskagurom/issues).

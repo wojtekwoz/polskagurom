@@ -217,14 +217,14 @@
 <p class="tagline">Polski anti-slop skill dla AI. Wycina bełkot, naprawia gramatykę, zostawia twój styl.</p>
 
 <h2>problem</h2>
-<p>LLM-y piszą po polsku jak korpo-prezentacja z 2007: „w oparciu o", „stanowi kluczowy element", „dedykowane rozwiązanie adresujące potrzeby". Bełkot, który da się rozpoznać z kilometra.</p>
+<p>LLM-y piszą po polsku jak korpo-prezentacja z 2007: „w oparciu o", „stanowi kluczowy element", „dedykowane rozwiązanie adresujące potrzeby". Bełkot, który widać na kilometr.</p>
 
 <h2>rozwiązanie</h2>
 <p><code>polskagurom</code> to skill, który czyta twój tekst, wycina ten bełkot, sprawdza gramatykę i zwraca naturalną polszczyznę — <strong>bez zmiany twojego stylu</strong>.</p>
 
 <h2>instalacja</h2>
 <pre><code><span class="prompt"></span>npx skills add wojtekwoz/polskagurom -g</code></pre>
-<p class="comment"># <code>-g</code> = globalnie, dostępne we wszystkich projektach<br># bez flagi = tylko w bieżącym projekcie</p>
+<p class="comment"># <code>-g</code> = globalnie, działa we wszystkich projektach<br># bez flagi = tylko w bieżącym projekcie</p>
 
 <h2>użycie</h2>
 <p>Wklej tekst do Claude Code / Codex / Cursor i odpal:</p>
@@ -235,9 +235,9 @@
 /polskagurom — to tłumaczenie z angielskiego</code></pre>
 
 <h2>przykład</h2>
-<p class="comment"># input ↓</p>
+<p class="comment"># wejście ↓</p>
 <div class="before">W oparciu o przeprowadzoną analizę, należy podkreślić, że nasza dedykowana platforma stanowi kluczowe rozwiązanie. Decyzja została podjęta przez zespół w celu dostarczenia wartości klientom.</div>
-<p class="comment"># output ↓</p>
+<p class="comment"># wyjście ↓</p>
 <div class="after">Z analizy wynika, że nasza platforma realnie pomaga firmom. Zespół zdecydował się ją zbudować, żeby dać klientom konkretną wartość.</div>
 <p class="comment"># wycięte: w oparciu o · należy podkreślić · dedykowana · stanowi · kluczowe · strona bierna · w celu · dostarczenia wartości</p>
 
@@ -255,7 +255,7 @@
 <ul>
   <li>Nie formalizuje — casual zostaje casualem</li>
   <li>Nie zmienia tonu — anti-slop ≠ corporate filter</li>
-  <li>Nie zmienia długości na siłę — tnie tylko bełkot, nie content</li>
+  <li>Nie zmienia długości na siłę — tnie tylko bełkot, nie treść</li>
   <li>Nie zgaduje — jak nie wie, pyta</li>
 </ul>
 
@@ -265,7 +265,7 @@
 ├── checklist.md          # 14-punktowa quick check (zawsze ładowana)
 ├── anti-slop.md          # kalki, AI-tells, korpomowa (on-demand)
 └── grammar-reference.md  # 7 przypadków, rekcja, interpunkcja (on-demand)</code></pre>
-<p class="comment"># token-efficient: skill ładuje tylko checklist. reference czyta gdy widzi konkretny problem.</p>
+<p class="comment"># token-efficient: skill ładuje tylko checklistę. reference czyta dopiero, gdy widzi konkretny problem.</p>
 
 <h2>linki</h2>
 <ul>
